@@ -17,5 +17,5 @@ CREATE TABLE `telas` (
   `tipo` varchar(45) NOT NULL,
   PRIMARY KEY (`nome`,`idusuarios`),
   KEY `fktelas_usuarios_idx` (`idusuarios`),
-  CONSTRAINT `fktelas_usuarios` FOREIGN KEY (`idusuarios`) REFERENCES `usuarios` (`idusuarios`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `fktelas_usuarios` FOREIGN KEY (`idusuarios`) REFERENCES `usuarios` (id) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

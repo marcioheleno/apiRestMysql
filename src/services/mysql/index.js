@@ -7,7 +7,12 @@ const connection = mysqlServer.createConnection({
   database: 'restfull_mysql'
 })
 
-const usuariosModule = require('./usuarios')({ connection })
+const errorHandler = (error, msg, rejectFunction) => {
+  console.log(error)
+  rejectFunction({ error: msg })
+}
+
+const usuariosModule = require('./usuarios')({ connection, errorHandler })
 
 module.exports = {
   usuarios: () => usuariosModule
